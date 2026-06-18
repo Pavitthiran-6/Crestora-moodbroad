@@ -1854,9 +1854,9 @@ function App() {
                     </ul>
 
                     {activeProject.additionalCharges && (
-                      <div className="mt-12">
+                      <div className="additional-charges-wrapper">
                         <h3>ADDITIONAL CHARGES</h3>
-                        <ul className="detail-features-list mt-4">
+                        <ul className="detail-features-list">
                           {activeProject.additionalCharges.map((charge, i) => (
                             <li key={i} className="detail-feature-item">
                               <span className="bullet-dash">✓</span> {charge}
