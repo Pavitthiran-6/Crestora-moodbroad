@@ -34,6 +34,7 @@ interface Project {
     footer: string
   }
   packages: PackageTier[]
+  additionalCharges?: string[]
 }
 
 // Project data with minimalist titles and detailed specifications
@@ -502,46 +503,50 @@ const projects: Project[] = [
     },
     packages: [
       {
-        name: "Single",
+        name: "Basic",
         price: "₹1,000+",
         features: [
-          "Custom Poster Design",
+          "Single Poster Design",
           "Social Media Format",
-          "High Resolution Files",
-          "2 Revisions",
-          "PNG Export"
+          "Basic Editing",
+          "High Resolution Export",
+          "2 Revisions"
         ],
         ctaLabel: "GET STARTED",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Single Package: Poster Design"
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Basic Package: Poster Design"
       },
       {
-        name: "Campaign",
+        name: "Standard",
         badge: "BEST VALUE",
-        price: "₹3,500+",
+        price: "₹2,500+",
         highlighted: true,
         features: [
-          "3 Custom Poster Designs",
-          "Print & Digital Formats",
-          "High Resolution Files",
-          "Multiple Export Formats",
-          "3 Revisions Each",
-          "Brand Consistency"
+          "Custom Poster Design",
+          "Social Media & Print Format",
+          "Premium Layout",
+          "Image Enhancement",
+          "Marketing Ready Design",
+          "High Resolution Export",
+          "4 Revisions"
         ],
         ctaLabel: "GET STARTED",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Campaign Package: Poster Design"
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Standard Package: Poster Design"
       },
       {
         name: "Premium",
-        price: "Custom Quote",
+        price: "₹5,000+",
         features: [
-          "Unlimited Poster Designs",
-          "Custom Illustrations",
-          "Print Ready Files",
-          "Billboard Formats",
-          "Brand Integration",
-          "Dedicated Designer"
+          "Premium Custom Design",
+          "Advertising Poster Design",
+          "Multiple Format Delivery",
+          "Advanced Graphic Composition",
+          "Print Ready Assets",
+          "Social Media Adaptations",
+          "Source Files",
+          "Priority Revisions",
+          "6 Revisions"
         ],
-        ctaLabel: "INQUIRE NOW",
+        ctaLabel: "GET STARTED",
         ctaHref: "mailto:creastorastudios@gmail.com?subject=Premium Package: Poster Design"
       }
     ]
@@ -666,47 +671,53 @@ const projects: Project[] = [
     },
     packages: [
       {
-        name: "Starter",
+        name: "Basic",
         price: "₹5,000+",
         features: [
-          "Motion Design",
-          "Typography Animation",
-          "Social Media Assets",
-          "Sound Synchronization",
-          "2 Revisions"
+          "5–10 Seconds Animation",
+          "Logo Animation",
+          "Icon Animation",
+          "Basic Motion Graphics",
+          "Background Music",
+          "2 Revisions",
+          "HD Export"
         ],
         ctaLabel: "GET STARTED",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Starter Package: Motion Graphics"
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Basic Package: Motion Graphics"
       },
       {
-        name: "Brand",
+        name: "Standard",
         badge: "RECOMMENDED",
         price: "₹12,000+",
         highlighted: true,
         features: [
-          "Motion Design",
-          "Explainer Video",
-          "Brand Animations",
-          "Typography Animation",
-          "Social Media Motion",
-          "Sound Synchronization",
-          "3 Revisions"
+          "10–20 Seconds Animation",
+          "Advanced Logo Animation",
+          "Motion Graphics Design",
+          "Intro Animation",
+          "Sound Effects",
+          "Social Media Assets",
+          "3 Revisions",
+          "Full HD Export"
         ],
         ctaLabel: "GET STARTED",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Brand Package: Motion Graphics"
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Standard Package: Motion Graphics"
       },
       {
         name: "Premium",
-        price: "Custom Quote",
+        price: "₹25,000+",
         features: [
-          "Full Motion Identity",
-          "UI Animation System",
-          "Custom Lottie Files",
-          "Broadcast Quality",
-          "Brand Storytelling",
-          "Dedicated Consultation"
+          "20–60 Seconds Animation",
+          "Promotional Motion Graphics",
+          "Brand Animation Assets",
+          "Explainer Motion Graphics",
+          "Marketing Motion Content",
+          "Advanced Transitions",
+          "Sound Design",
+          "5 Revisions",
+          "Full HD / 4K Export"
         ],
-        ctaLabel: "INQUIRE NOW",
+        ctaLabel: "GET STARTED",
         ctaHref: "mailto:creastorastudios@gmail.com?subject=Premium Package: Motion Graphics"
       }
     ]
@@ -790,7 +801,7 @@ const projects: Project[] = [
   {
     id: 10,
     title: "3D Animations",
-    year: "FROM ₹10,000",
+    year: "FROM ₹8,000",
     image: "/images/architecture.png",
     description: "Immersive 3D animation scenes, architectural flythroughs, and structural visualization layouts for presentations and sites.",
     features: [
@@ -815,59 +826,69 @@ const projects: Project[] = [
     customSolutionDesc: "Architectural flythroughs, structural wireframe designs, or isometric space layouts representing industrial or real estate plans.",
     customQuote: "For architects, developers, and visualizers who need to explain complex structural or spatial concepts in a single, cinematic view.",
     idealClients: ["Architectural firms", "Real estate developers", "Industrial design houses"],
+    additionalCharges: [
+      "Additional Product Model — Starting From ₹2,000",
+      "Additional Render Scene — Starting From ₹1,500",
+      "Additional Animation Sequence — Starting From ₹3,000",
+      "Extra Revision — Starting From ₹1,000",
+      "Commercial Voice Over — Custom Quote",
+      "Advanced Visual Effects — Custom Quote",
+      "Ultra HD 4K Rendering — Custom Quote"
+    ],
     note: {
       additional: [
         "The displayed price is a starting price only.",
-        "Final pricing depends on project scope, number of pages, custom features, integrations, content requirements, revisions, animations, business requirements, and overall project complexity.",
-        "Additional requirements may increase the final project cost.",
-        "A detailed quotation will be provided after reviewing project requirements."
+        "Final pricing depends on product complexity, animation duration, number of products, rendering requirements, visual effects, revisions, and project scope.",
+        "Additional requirements may increase the final project cost."
       ],
       footer: ""
     },
     packages: [
       {
-        name: "Visualization",
-        price: "₹10,000+",
+        name: "Basic",
+        price: "₹8,000+",
         features: [
-          "Structural Wireframe Modeling",
-          "Isometric Lighting",
-          "Static Renders",
-          "High Resolution Output",
+          "1 Product Model",
+          "Basic Materials & Textures",
+          "Product Render Images",
+          "Basic Lighting Setup",
           "2 Revisions"
         ],
         ctaLabel: "GET STARTED",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Visualization Package: 3D Animations"
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Basic Package: 3D Animations"
       },
       {
-        name: "Flythrough",
+        name: "Standard",
         badge: "RECOMMENDED",
-        price: "₹25,000+",
+        price: "₹20,000+",
         highlighted: true,
         features: [
-          "Structural Modeling",
-          "Camera Flythroughs",
-          "Isometric Lighting",
-          "Perspective Animation",
-          "Render Composition",
-          "Video Export",
-          "3 Revisions"
+          "1 Product Model",
+          "Advanced Materials & Textures",
+          "Product Rendering",
+          "Product Showcase Animation",
+          "Custom Scene Setup",
+          "HD Export",
+          "4 Revisions"
         ],
         ctaLabel: "GET STARTED",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Flythrough Package: 3D Animations"
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Standard Package: 3D Animations"
       },
       {
-        name: "Cinematic",
-        price: "Custom Quote",
+        name: "Premium",
+        price: "₹50,000+",
         features: [
-          "Full Scene Animation",
-          "Photorealistic Lighting",
-          "Environment Design",
-          "Dynamic Camera Work",
-          "Sound Design",
-          "Broadcast Quality Output"
+          "Product Advertisement Animation",
+          "Commercial Quality Rendering",
+          "Advanced Lighting & Materials",
+          "Marketing Assets",
+          "Camera Animations",
+          "Multiple Scene Setup",
+          "Full HD / 4K Export",
+          "6 Revisions"
         ],
-        ctaLabel: "INQUIRE NOW",
-        ctaHref: "mailto:creastorastudios@gmail.com?subject=Cinematic Package: 3D Animations"
+        ctaLabel: "GET STARTED",
+        ctaHref: "mailto:creastorastudios@gmail.com?subject=Premium Package: 3D Animations"
       }
     ]
   }
@@ -1831,6 +1852,19 @@ function App() {
                         </li>
                       ))}
                     </ul>
+
+                    {activeProject.additionalCharges && (
+                      <div className="mt-12">
+                        <h3>ADDITIONAL CHARGES</h3>
+                        <ul className="detail-features-list mt-4">
+                          {activeProject.additionalCharges.map((charge, i) => (
+                            <li key={i} className="detail-feature-item">
+                              <span className="bullet-dash">✓</span> {charge}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
 
                   <div className="detail-meta-group">
