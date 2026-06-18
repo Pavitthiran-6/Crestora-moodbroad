@@ -1031,6 +1031,7 @@ function App() {
   const flipStateRef = useRef<any>(null)
   const packageOverlayRef = useRef<HTMLDivElement>(null)
   const pkgOpenTlRef = useRef<gsap.core.Timeline | null>(null)
+  const touchStartX = useRef<number | null>(null)
 
   // Initialize Lenis smooth scroll
   useEffect(() => {
@@ -1062,15 +1063,76 @@ function App() {
 
   // Setup ScrollTrigger animations on mount
   useEffect(() => {
-    // Project items initial mount entry
-    gsap.set('.project-item', { opacity: 0, y: 30 })
-    gsap.to('.project-item', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      stagger: { each: 0.08, from: 'start' }
-    })
+    // Integrated Packages header reveal on scroll
+    const srvHeaderAnim = gsap.fromTo('.scanner-section-header > *',
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.scanner-section-header',
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    )
+
+    // Integrated Packages cards reveal on scroll
+    const srvCardsAnim = gsap.fromTo('.normal-pkg-card',
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.packages-grid',
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    )
+
+    // Selected Services header reveal on scroll
+    const servicesHeaderAnim = gsap.fromTo(['.header-title', '.view-toggle'],
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: '.header',
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    )
+
+    // Selected Services project items reveal on scroll
+    const projectItemsAnim = gsap.fromTo('#projects-container',
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#projects-container',
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    )
 
     // Header logo animation
     const headerLogoPaths = document.querySelectorAll('.header-logo .logo-path')
@@ -1184,6 +1246,18 @@ function App() {
       triggerHeaderLogo.kill()
       triggerFooterLogo.kill()
       triggerHeader.kill()
+      
+      srvHeaderAnim.scrollTrigger?.kill()
+      srvHeaderAnim.kill()
+      
+      srvCardsAnim.scrollTrigger?.kill()
+      srvCardsAnim.kill()
+      
+      servicesHeaderAnim.scrollTrigger?.kill()
+      servicesHeaderAnim.kill()
+      
+      projectItemsAnim.scrollTrigger?.kill()
+      projectItemsAnim.kill()
     }
   }, [])
 
@@ -1374,6 +1448,24 @@ function App() {
   const handleNext = () => {
     setPkgDirection(1)
     setPkgIndex((prev) => wrap(prev + 1, 3))
+  }
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const touchEndX = e.changedTouches[0].clientX
+    const diffX = touchStartX.current - touchEndX
+    const threshold = 50 // swipe threshold in px
+
+    if (diffX > threshold) {
+      handleNext()
+    } else if (diffX < -threshold) {
+      handlePrev()
+    }
+    touchStartX.current = null
   }
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -1794,7 +1886,11 @@ function App() {
 
           {/* Slider Container */}
           <div className="pkg-slider-container">
-            <div className="slider">
+            <div
+              className="slider"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               <button className="slider--btn slider--btn__prev" onClick={handlePrev}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="m15 18-6-6 6-6" />

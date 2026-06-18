@@ -968,7 +968,22 @@ h1 sup {
   }
 }
 
+@media (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   .projects-container.grid-view {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -988,37 +1003,246 @@ h1 sup {
     font-size: 3rem;
   }
 
+  /* Keep logo and contact link on the same row, main-nav centered below them */
   .site-header .grid-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 2rem;
   }
 
   .logo-container {
-    grid-column: 1 / -1;
-  }
-
-  .main-nav {
-    grid-column: 1 / -1;
+    order: 1;
+    grid-column: auto;
+    height: 4rem;
   }
 
   .contact-link {
-    grid-column: 1 / -1;
-    text-align: left;
+    order: 2;
+    grid-column: auto;
+    text-align: right;
+  }
+
+  .contact-link a {
+    font-size: 1.8rem !important;
+  }
+
+  .main-nav {
+    order: 3;
+    grid-column: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
   }
 
   .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a {
+    font-size: 1.25rem !important;
+  }
+
+  /* Responsive Large Logos overrides */
+  .header-logo,
+  .footer-logo {
+    font-size: 11.5vw !important;
+    letter-spacing: -0.05em !important;
+    min-height: 25vh !important;
+    max-height: 25vh !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .footer-logo {
+    min-height: 15vh !important;
+    max-height: 15vh !important;
+  }
+
+  /* Overlay scroll and overflow fixes */
+  #service-detail-panel,
+  .pkg-overlay {
+    overflow-x: hidden !important;
+  }
+
+  /* Package Overlay Intro mobile layout adjustment */
+  .pkg-overlay-intro {
+    padding: 5rem 3rem 0 !important;
+  }
+
+  .pkg-overlay-title {
+    font-size: 4rem !important;
+  }
+
+  .pkg-overlay-close {
+    top: 2rem !important;
+    right: 2rem !important;
+  }
+
+  /* Package Slider overlay mobile vertical stack */
+  .pkg-overlay .pkg-slider-container {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .pkg-overlay .slider {
+    height: auto !important;
+    display: block !important;
+  }
+
+  .pkg-overlay .slider--btn {
+    display: none !important;
+  }
+
+  .pkg-overlay .slides__wrapper {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    perspective: none !important;
+  }
+
+  .pkg-overlay .slides {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3rem !important;
+  }
+
+  .pkg-overlay .slides > * {
+    grid-area: auto !important;
+  }
+
+  .pkg-overlay .slide {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .pkg-overlay .slide__inner {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .pkg-overlay .pkg-card {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 3rem 2.5rem !important;
+    border-radius: 0 !important;
   }
 }
 
 @media (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+
   .projects-container.grid-view {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   .footer-header h2 {
     font-size: 2.5rem;
+  }
+
+  /* Detail Panel Overlay mobile paddings and typography */
+  .detail-panel-single {
+    padding: 6rem 2rem 3rem 2rem !important;
+  }
+
+  .detail-title {
+    font-size: 3rem !important;
+  }
+
+  .detail-desc {
+    font-size: 1.8rem !important;
+  }
+
+  .detail-price-badge {
+    font-size: 2.4rem !important;
+  }
+
+  .packages-btn {
+    padding: 1rem 1.8rem !important;
+    font-size: 1.1rem !important;
+  }
+
+  .detail-grid-info {
+    gap: 3rem !important;
+    padding-top: 2.5rem !important;
+  }
+
+  .detail-feature-item {
+    font-size: 1.5rem !important;
+  }
+
+  .meta-item p {
+    font-size: 2rem !important;
+  }
+
+  .pkg-pricing-notice {
+    padding: 2rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .pkg-pricing-notice-item {
+    font-size: 1.4rem !important;
+  }
+
+  .detail-close-btn {
+    top: 1.5rem !important;
+    right: 1.5rem !important;
+    font-size: 1.2rem !important;
+  }
+
+  /* List view title text size on small screen */
+  .list-view .project-title,
+  .list-view .project-year {
+    font-size: 1.5rem !important;
+  }
+
+  /* Package Overlay Intro mobile layout adjustment */
+  .pkg-overlay-intro {
+    padding: 4.5rem 2rem 0 !important;
+  }
+
+  .pkg-overlay-title {
+    font-size: 3rem !important;
+  }
+
+  .pkg-overlay-close {
+    top: 1.5rem !important;
+    right: 1.5rem !important;
+    font-size: 1.2rem !important;
+  }
+
+  .pkg-overlay-note {
+    padding: 2rem 2rem 3rem !important;
+    font-size: 1.1rem !important;
+  }
+
+  .pkg-overlay .slides {
+    gap: 2rem !important;
+  }
+  .pkg-overlay .pkg-card {
+    padding: 2.5rem 1.8rem !important;
   }
 }
 
@@ -1566,13 +1790,17 @@ h1 sup {
   clip-path: inset(100% 0 0 0);
 }
 
-.project-item {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
 .footer-header .light-text,
 .footer-header .bold-text {
+  opacity: 0;
+}
+
+/* FOUC prevention for scroll reveal content */
+.scanner-section-header > *,
+.normal-pkg-card,
+.header-title,
+.view-toggle,
+#projects-container {
   opacity: 0;
 }
 
@@ -1683,7 +1911,7 @@ h1 sup {
   justify-content: space-between;
   background: #ffffff;
   border: 1px solid rgba(26, 25, 23, 0.08);
-  border-radius: 12px;
+  border-radius: 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   box-sizing: border-box;
@@ -1771,7 +1999,7 @@ h1 sup {
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.08em;
-  border-radius: 6px;
+  border-radius: 0;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   text-transform: uppercase;
   box-sizing: border-box;
@@ -1785,17 +2013,72 @@ h1 sup {
 
 @media (max-width: 768px) {
   .srv-scanner .packages-grid {
-    gap: 2rem;
-    padding: 0 1rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 0 1rem !important;
   }
   .srv-scanner .normal-pkg-card {
-    width: 100%;
-    height: auto;
-    min-height: 520px;
-    padding: 2rem;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 380px !important;
+    padding: 2.2rem 2.2rem !important;
+    border-radius: 0 !important;
+  }
+  .srv-scanner .normal-pkg-card:nth-child(5) {
+    grid-column: auto !important;
+  }
+  .srv-scanner .pkg-card-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem 2rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+  }
+  .srv-scanner .pkg-card-feature-item {
+    align-items: flex-start !important;
+  }
+  .srv-scanner .pkg-card-check {
+    margin-top: 0.2rem !important;
+    flex-shrink: 0 !important;
   }
   .srv-scanner .scanner-section-title {
     font-size: 3rem;
+  }
+  .list-view .project-item {
+    align-items: flex-start !important;
+  }
+  .list-view .project-year {
+    text-align: right !important;
+    margin-left: 2rem !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .srv-scanner .packages-grid {
+    gap: 1.5rem !important;
+  }
+  .srv-scanner .normal-pkg-card {
+    padding: 1.8rem 1.8rem !important;
+    min-height: 340px !important;
+  }
+  .srv-scanner .pkg-card-title {
+    font-size: 1.8rem !important;
+  }
+  .srv-scanner .pkg-card-price {
+    font-size: 2.4rem !important;
+  }
+  .srv-scanner .pkg-card-features {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .srv-scanner .pkg-card-feature-item {
+    font-size: 1.25rem !important;
+    gap: 0.6rem !important;
+  }
+  .srv-scanner .pkg-card-divider {
+    margin: 0.6rem 0 !important;
   }
 }
 
