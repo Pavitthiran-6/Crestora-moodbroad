@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Crestora Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Crestora Studio** is a full-service creative and digital agency delivering premium digital solutions for businesses, startups, and brands.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What We Do
 
-## React Compiler
+We help businesses build their complete digital presence — from websites and mobile apps to brand identities, motion graphics, and marketing campaigns.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Our Services
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Website Development** — Custom, responsive, modern websites built for performance and impact.
+- **Mobile App Development** — Cross-platform mobile applications designed for seamless user experience.
+- **SEO & Digital Marketing** — Data-driven strategies to grow your online visibility and reach.
+- **Logo & Brand Identity** — Distinctive brand systems that leave a lasting impression.
+- **Poster & Graphic Design** — Creative visual assets for both digital and print.
+- **Video Editing** — Professional video production and post-production.
+- **Motion Graphics** — Engaging animated visuals for ads, reels, and campaigns.
+- **2D & 3D Animated Advertisements** — High-quality animated content for marketing and promotion.
+- **Website & App Maintenance** — Ongoing support, updates, and performance monitoring.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Integrated Packages
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Package | Starting From |
+|---|---|
+| Digital Presence Package | ₹35,000+ |
+| Business Growth Package | ₹75,000+ |
+| Brand Identity Package | ₹25,000+ |
+| Content & Advertising Package | ₹40,000+ |
+| Creastora Business Ecosystem | ₹1,50,000+ |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Contact
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+📧 **creastorastudios@gmail.com**
+
+---
+
+*Built with passion. Delivered with precision.*
